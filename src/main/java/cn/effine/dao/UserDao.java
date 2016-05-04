@@ -1,17 +1,17 @@
 /**
  * @author  effine | iballader#gmail.com
  * @email   iballader#gmail.com
- * @date    2016年5月3日  下午10:59:15
+ * @date    2016年5月4日  下午11:14:18
  * @site    http://effine.cn
  * @since   1.0
  */
 
-package cn.effine.service;
+package cn.effine.dao;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
-@Service
-public interface UserService {
+@Repository
+public interface UserDao {
 
 	/**
 	 * 用户登录

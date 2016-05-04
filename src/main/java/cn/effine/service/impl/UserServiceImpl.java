@@ -8,8 +8,17 @@
 
 package cn.effine.service.impl;
 
-public class UserServiceImpl {
+import org.springframework.beans.factory.annotation.Autowired;
+
+import cn.effine.dao.UserDao;
+import cn.effine.service.UserService;
+
+public class UserServiceImpl implements UserService {
+	@Autowired
+	private UserDao userDao;
+
+	public boolean login(String username, String password) {
+		return userDao.login(username, password);
+	}
 
 }
-
-
