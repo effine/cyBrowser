@@ -16,5 +16,4 @@ public class UserDaoImpl extends DaoSupport implements UserDao {
 	public boolean login(String username, String password) {
 		return false;
 	}
-
 }
