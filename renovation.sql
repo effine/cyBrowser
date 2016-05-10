@@ -6,7 +6,9 @@ use renovation;
 -- 用户表
 create table user (
 	id int(11) not null auto_increment primary key,
-	sex tinyInt(1) not null comment '性别[男0|女1|保密2]'
+	sex tinyInt(1) not null comment '性别[男0|女1|保密2]',
+	nick_name varchar(50) not null comment '昵称',
+	avatar varchar(50) comment '头像'
 )engine=InnoDB default charset=utf8 comment='用户表'
 
 -- 第三方登录表
