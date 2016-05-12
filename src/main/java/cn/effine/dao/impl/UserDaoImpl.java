@@ -8,9 +8,12 @@
 
 package cn.effine.dao.impl;
 
+import org.springframework.stereotype.Repository;
+
 import cn.effine.dao.DaoSupport;
 import cn.effine.dao.UserDao;
 
+@Repository
 public class UserDaoImpl extends DaoSupport implements UserDao {
 
 	public boolean login(String username, String password) {

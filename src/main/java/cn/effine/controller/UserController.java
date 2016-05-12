@@ -25,4 +25,10 @@ public class UserController {
 
 		return null;
 	}
+
+	@RequestMapping("collect/list")
+	public String getUserCollectList(String username, String password) {
+
+		return null;
+	}
 }

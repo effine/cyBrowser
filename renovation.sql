@@ -22,8 +22,7 @@ create table third_login (
 -- 灵感表
 create table inspiration (
 	id int(11) not null auto_increment primary key,
-	img_url varchar(32) not null comment '灵感图片URL',
-	label varchar(255) default '' comment '灵感标签数组(包含标签内容及位置)',
+	img_url varchar(32) not null comment '灵感图片URL'
 )engine=InnoDB default charset=utf8 comment='灵感表'
 
 -- 灵感标签表
@@ -40,6 +39,5 @@ create table collect (
 	id int(11) not null auto_increment primary key,
 	user_id int(11) not null comment '用户ID',
 	inspiration_id int(11) not null comment '灵感ID',
-	collect_time varchar(50) not null comment '收藏时间',
-	is_cancel tinyInt(1) default 0 comment '是否取消收藏'
+	collect_time varchar(50) not null comment '收藏时间'
 )engine=InnoDB default charset=utf8 comment='收藏表'
