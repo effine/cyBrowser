@@ -8,17 +8,24 @@
 
 package cn.effine.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import org.springframework.stereotype.Controller;
+import cn.effine.service.CollectService;
+import cn.effine.utils.CommonUtils;
 
 @Controller
 @RequestMapping("collect")
 public class CollectController {
+	@Autowired
+	private CollectService collectService;
 
 	@RequestMapping("add")
-	public String addCollect() {
-		return null;
+	public String addCollect(HttpServletRequest request, int inspirationId) {
+		request.get
+		boolean status = collectService.addCollect(1, inspirationId);
+		return CommonUtils.constuctureResponse(status)
 	}
 
 	@RequestMapping("update")
