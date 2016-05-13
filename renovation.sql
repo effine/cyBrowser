@@ -16,7 +16,7 @@ create table third_login (
 	id int(11) not null auto_increment primary key,
 	user_id int(11) default 0 comment '用户ID',
 	openid varchar(32) not null comment '第三方唯一标识',
-	source tinyInt(1) not null comment '来源[0微信|1QQ|2微博]',
+	source tinyInt(1) not null comment '来源[0微信|1QQ|2微博]'
 )engine=InnoDB default charset=utf8 comment='第三方登录表'
 
 -- 灵感表
@@ -28,6 +28,7 @@ create table inspiration (
 -- 灵感标签表
 create table label (
 	id int(11) not null auto_increment primary key,
+	user_id int(11) not null comment '用户ID',
 	inspiration_id int(11) not null comment '灵感ID',
 	content varchar(50) not null comment '标签内容',
 	height varchar(50) not null comment '纵向坐标',
