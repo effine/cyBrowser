@@ -8,6 +8,8 @@
 
 package cn.effine.service.impl;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +21,7 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserDao userDao;
 
-	public boolean login(String username, String password) {
+	public Map<String, Object> login(String username, String password) {
 		return userDao.login(username, password);
 	}
 

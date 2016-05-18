@@ -8,6 +8,8 @@
 
 package cn.effine.dao.impl;
 
+import java.util.Map;
+
 import org.springframework.stereotype.Repository;
 
 import cn.effine.dao.DaoSupport;
@@ -16,7 +18,8 @@ import cn.effine.dao.UserDao;
 @Repository
 public class UserDaoImpl extends DaoSupport implements UserDao {
 
-	public boolean login(String username, String password) {
-		return false;
+	public Map<String, Object> login(String username, String password) {
+		String sql = "select * from user where nick_name=? and password=?";
+		return getJdbcTemplate().queryForMap(sql, username, password);
 	}
 }

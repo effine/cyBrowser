@@ -19,24 +19,25 @@ import com.alibaba.fastjson.JSON;
 public class CommonUtils {
 
 	/**
-	 * 构建方法返回值json字符串；
-	 * 针对添加、更新、删除方法只返回操作状态
+	 * 构建方法返回值json字符串； 针对添加、更新、删除方法只返回操作状态
 	 *
 	 * @param status
 	 *            状态[status<=0失败|status>0成功]
 	 * @return json字符串
 	 */
-	public static String constuctureResponse(boolean status){
+	public static String constuctureResponse(boolean status) {
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("status", status);
 		String msg = "成功";
-		if(!status){
+		int code = 1;
+		if (!status) {
+			code = 0;
 			msg = "失败";
 		}
+		map.put("status", code);
 		map.put("msg", msg);
 		return JSON.toJSONString(map);
 	}
-	
+
 	/**
 	 * 构建带返回数据的方法json返回值
 	 *
@@ -45,14 +46,16 @@ public class CommonUtils {
 	 * @param msg
 	 *            状态信息
 	 * @param data
-	 *            数据
+	 *            数据(无数据则为null)
 	 * @return json字符串
 	 */
-	public static String constuctureResponse(int status, String msg, Object data){
+	public static String constuctureResponse(int status, String msg, Object data) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("status", status);
 		map.put("msg", msg);
-		map.put("data", data);
+		if (null != data) {
+			map.put("data", data);
+		}
 		return JSON.toJSONString(map);
 	}
 }

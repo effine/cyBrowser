@@ -8,6 +8,8 @@
 
 package cn.effine.service;
 
+import java.util.Map;
+
 public interface UserService {
 
 	/**
@@ -19,5 +21,5 @@ public interface UserService {
 	 *            密码
 	 * @return 用户是否登录
 	 */
-	boolean login(String username, String password);
+	Map<String, Object> login(String username, String password);
 }

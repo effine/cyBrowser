@@ -23,7 +23,7 @@ public class CollectDaoImpl extends DaoSupport implements CollectDao {
 	}
 
 	public boolean cancelCollect(int userId, int inspirationId) {
-		String sql = "delete collect where user_id=? and inspiration_id=?)";
+		String sql = "delete from collect where user_id=? and inspiration_id=?";
 		int status = super.getJdbcTemplate().update(sql, userId, inspirationId);
 		return status > 0;
 	}
