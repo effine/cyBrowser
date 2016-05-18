@@ -10,7 +10,7 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	
+
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<!-- 应用上下文配置文件 -->
@@ -45,6 +45,16 @@
 	<filter-mapping>
 		<filter-name>SpringEncodingFilter</filter-name>
 		<url-pattern>*</url-pattern>
+	</filter-mapping>
+
+	<!-- spring配置etag -->
+	<filter>
+		<filter-name>etagFilter</filter-name>
+		<filter-class>org.springframework.web.filter.ShallowEtagHeaderFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>etagFilter</filter-name>
+		<url-pattern>/api/*</url-pattern>
 	</filter-mapping>
 
 	<welcome-file-list>
