@@ -36,8 +36,7 @@ public class UserController {
 	 * @param password
 	 *            密码
 	 */
-	@RequestMapping(value="", method=RequestMethod.GET)
-	@RequestMapping("login")
+	@RequestMapping(value="login", method=RequestMethod.GET)
 	@ResponseBody
 	public String login(HttpServletRequest request, String username, String password) {
 		Map<String, Object> map = userService.login(username, password);
