@@ -13,21 +13,19 @@ import org.junit.Test;
 public class TryCatchTest {
 
 	@Test
-	public void testTryCatch() {
-		System.out.println(other());
-
+	public void testMethod() {
+		int i = method1();
+		System.out.println(i);
 	}
 
-	@SuppressWarnings("finally")
-	public int other() {
-		int x = 1;
-
+	public int method1() {
+		int a = 1;
 		try {
-			return ++x;
+			return ++a;
 		} catch (Exception e) {
-
+			e.printStackTrace();
 		} finally {
-			return ++x;
+			return ++a;
 		}
 	}
 }
